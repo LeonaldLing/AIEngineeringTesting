@@ -6,7 +6,7 @@ on:
   pull_request: 
     branches: [ main ]         # runs on pull requests to main
   workflow_dispatch:        # allows manual trigger from GitHub UI
-    jobs: 
+jobs: 
       train: 
         runs-on: ubuntu-latest     # GitHub-hosted Linux runner (free) 
     
@@ -26,7 +26,7 @@ on:
             uses: actions/cache@v4 
             with: 
               path: ~/.cache/pip 
-              key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }} # error here
+              key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }} 
               restore-keys: | 
                 ${{ runner.os }}-pip- 
     
